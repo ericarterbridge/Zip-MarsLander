@@ -5,17 +5,19 @@ public class BurnInputStream implements BurnStream {
 
     @Override
     public int getNextBurn(DescentEvent status) {
-        String[] tokens = scanner.nextLine().split(" ");
-        if (tokens.length > 0) {
-            while (true) {
-                try {
-                    int burn = Integer.parseInt(tokens[0]);
-                    return burn;
-                } catch (NumberFormatException e) {
-                    System.err.println("Must Enter a Number (0-200)");
-                }
-            }
-        }
-        return 0;
+//        String[] tokens = scanner.nextLine().split(" ");
+//        if (tokens.length > 0) {
+//            while (true) {
+//                try {
+//                    int burn = Integer.parseInt(tokens[0]);
+//                    return burn;
+//                } catch (NumberFormatException e) {
+//                    System.err.println("Must Enter a Number (0-200)");
+//                }
+//            }
+//        }
+//        return 0;
+        OnBoardComputer onBoardComputer = new OnBoardComputer();
+        return onBoardComputer.getNextBurn(status);
     }
 }
